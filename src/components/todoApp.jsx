@@ -1,5 +1,8 @@
 import React from 'react'
-import {CheckCircle2, Plus, Trash2} from 'lucide-react';
+import {CheckCircle2, Circle, Filter, Plus, Trash2} from 'lucide-react';
+import {TodoFilter} from './todoFilter.jsx';
+import {TodoForm} from './todoForm.jsx';
+import {TodoItem} from './todoItem.jsx';
 
 export const TodoApp = () => {
   return (
@@ -48,6 +51,24 @@ export const TodoApp = () => {
                <button className='flex items-center gap-3 text-green-600 hover:text-green-700 px-4 py-2 rounded-lg hover:bg-green-50 transition-colors duration-200 text-sm'>
                  <CheckCircle2 size={20} /> Mark All Completed
                </button>
+             </div>
+           </div>
+           <TodoFilter />
+         </div>
+         <div className='p-6 border-b border-gray-300 bg-gray-100'>
+           <TodoForm />
+         </div>
+         <div className='max-h-96 overflow-y-auto'>
+           <div className='p-12 text-center'>
+             <div className='text-gray-600'>
+               <Circle size={48} className='mx-auto mb-4 opacity-50'/>
+               <p className='text-lg font-medium mb-2 text-gray-800'>No todos yet</p>
+               <p className='text-lg font-medium mb-2 text-gray-800'>Add your first todo to get started</p>
+             </div>
+             <div className='text-gray-600'>
+               <Filter size={48} className='mx-auto mb-4 opacity-50'/>
+               <p className='text-lg font-medium mb-2 text-gray-800'>No filter todos
+               </p>
              </div>
            </div>
          </div>
