@@ -1,10 +1,28 @@
 import {Calendar, Check, Edit3, Trash2} from 'lucide-react';
+import {useState} from "react";
 
-export const TodoItem = () => {
+export const TodoItem = ({todo, index}) => {
+    const [isEditing, setIsEditing] = useState(false);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const formateDate = dateString => {
+        const date = new Date(dateString);
+        return new  Intl.DateTimeFormat("en-US", {
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+        })
+    }
   return (
-    <div className="group p-4 hover:bg-gray-100 transition-all duration-200">
+    <div className={`group p-4 hover:bg-gray-100 transition-all duration-200 ${isDeleting 
+    ? 'opacity-0 transform scale-95' :
+        'opacity-100 transform scale-100' 
+        } ${todo.completed ? 'opacity-75' : ''}`} style={{animationDelay: `${index * 50}ms`,
+    animation: 'slideInUp 0.3s ease-out forwards'}}>
       <div className="flex items-start gap-3">
-        <button className="flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 mt-0.5">
+        <button className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 
+        mt-0.5 ${todo.completed ? 'border-green-500 text-white hover: bg-green-600'
+        : 'border-gray-400 hover:border-green-500 hover:bg-green-600'}`}>
           <Check size={14} />
         </button>
         <div className="flex-1 min-w-0">
