@@ -74,7 +74,7 @@ export const store = configureStore({
 //                             {quickAmounts.map((amount) => (
 //                                 <button
 //                                     key={amount}
-//                                     onClick={() => handleAmountSelect(amount)}
+//
 //                                     className={`p-3 rounded-lg border-2 transition-all ${
 //                                         selectedAmount === amount
 //                                             ? 'border-blue-500 bg-blue-50 text-blue-600'
@@ -110,7 +110,7 @@ export const store = configureStore({
 //                                 return (
 //                                     <button
 //                                         key={method.id}
-//                                         onClick={() => setSelectedMethod(method.id)}
+//
 //                                         className={`w-full p-4 rounded-lg border-2 flex items-center space-x-4 transition-all ${
 //                                             selectedMethod === method.id
 //                                                 ? 'border-blue-500 bg-blue-50'
